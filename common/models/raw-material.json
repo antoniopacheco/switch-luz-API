@@ -1,0 +1,37 @@
+{
+  "name": "raw-material",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "no_inv": {
+      "type": "string",
+      "required": true
+    },
+    "description_eng": {
+      "type": "string",
+      "required": true
+    },
+    "description_spa": {
+      "type": "string"
+    },
+    "procedency": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "measure_unit": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
