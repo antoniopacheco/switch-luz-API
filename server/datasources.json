@@ -1,13 +1,9 @@
 {
   "db": {
-    "name": "db",
-    "connector": "memory"
-  },
-  "mymongo": {
-    "name": "mymongo",
     "host": "localhost",
     "port": 27017,
     "database": "switch-luz",
+    "name": "db",
     "connector": "mongodb"
   }
 }
