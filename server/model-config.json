@@ -36,11 +36,27 @@
     "dataSource": "db",
     "public": false
   },
-  "raw-material": {
+  "AppUser": {
     "dataSource": "db",
     "public": true
   },
-  "AppUser": {
+  "Procedency": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Folder": {
+    "dataSource": "db",
+    "public": true
+  },
+  "MaterialType": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UnitMeasurement": {
+    "dataSource": "db",
+    "public": true
+  },
+  "RawMaterial": {
     "dataSource": "db",
     "public": true
   }

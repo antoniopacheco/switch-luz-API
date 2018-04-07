@@ -1,5 +1,5 @@
 {
-  "name": "raw-material",
+  "name": "RawMaterial",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,28 +10,79 @@
       "type": "string",
       "required": true
     },
-    "description_eng": {
+    "description": {
       "type": "string",
       "required": true
     },
     "description_spa": {
       "type": "string"
     },
-    "procedency": {
+    "procedency_id": {
       "type": "string",
       "required": true
     },
-    "type": {
+    "materialType_id": {
       "type": "string",
       "required": true
     },
-    "measure_unit": {
+    "folder_id": {
+      "type": "string"
+    },
+    "unit_measurement_id": {
+      "type": "string"
+    },
+    "created_by": {
       "type": "string",
       "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "updated_by": {
+      "type": "string",
+      "required": true
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "folder": {
+      "type": "belongsTo",
+      "model": "Folder",
+      "foreignKey": "folder_id"
+    },
+    "materialType": {
+      "type": "belongsTo",
+      "model": "MaterialType",
+      "foreignKey": "materialType_id"
+    },
+    "UnitMeasurement": {
+      "type": "belongsTo",
+      "model": "UnitMeasurement",
+      "foreignKey": "unit_measurement_id"
+    },    
+    "procedency": {
+      "type": "belongsTo",
+      "model": "Procedency",
+      "foreignKey": "procedency_id"
+    },
+    "userCreated": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": "created_by"
+    },
+    "userUpdated": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": "updated_by"
+    }
+  },
   "acls": [
     {
       "accessType": "*",
@@ -44,7 +95,7 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW"
-    },
+    },    
     {
       "accessType": "*",
       "principalType": "ROLE",
